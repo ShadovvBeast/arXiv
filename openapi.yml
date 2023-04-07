@@ -1,0 +1,56 @@
+openapi: 3.0.0
+info:
+  title: arXiv Plugin API
+  description: A plugin that enables access to the arXiv.org API to search for academic papers.
+  version: 1.0.0
+paths:
+  /search_papers:
+    post:
+      summary: Search for papers on arXiv.org based on the provided query.
+      operationId: search_papers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: The search query.
+                max_results:
+                  type: integer
+                  description: The maximum number of results to return.
+                  default: 10
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  papers:
+                    type: array
+                    description: A list of dictionaries containing information about the papers.
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                          description: The title of the paper.
+                        authors:
+                          type: array
+                          description: A list of authors of the paper.
+                          items:
+                            type: string
+                        summary:
+                          type: string
+                          description: The summary or abstract of the paper.
+                        link:
+                          type: string
+                          description: The URL to the PDF of the paper.
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error

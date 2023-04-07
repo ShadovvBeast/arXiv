@@ -1,0 +1,58 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "arXiv Plugin",
+  "name_for_model": "arxiv",
+  "version": "0.0.1",
+  "description": "A plugin that enables access to the arXiv.org API to search for academic papers.",
+  "operations": [
+    {
+      "name": "search_papers",
+      "description": "Search for papers on arXiv.org based on the provided query.",
+      "inputs": [
+        {
+          "name": "query",
+          "type": "string",
+          "description": "The search query."
+        },
+        {
+          "name": "max_results",
+          "type": "integer",
+          "description": "The maximum number of results to return.",
+          "optional": true,
+          "default": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "papers",
+          "type": "list",
+          "description": "A list of dictionaries containing information about the papers.",
+          "elements": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "The title of the paper."
+              },
+              "authors": {
+                "type": "list",
+                "description": "A list of authors of the paper.",
+                "elements": {
+                  "type": "string"
+                }
+              },
+              "summary": {
+                "type": "string",
+                "description": "The summary or abstract of the paper."
+              },
+              "link": {
+                "type": "string",
+                "description": "The URL to the PDF of the paper."
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
