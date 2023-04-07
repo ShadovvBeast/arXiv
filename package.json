@@ -1,0 +1,15 @@
+{
+  "name": "arxiv-plugin",
+  "version": "1.0.0",
+  "description": "A plugin that enables access to the arXiv.org API to search for academic papers.",
+  "main": "index.js",
+  "scripts": {
+    "start": "bun run index.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "xml2js": "^0.4.23"
+  }
+}

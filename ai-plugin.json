@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "arXiv Search Plugin",
+  "name_for_model": "arxiv",
+  "description_for_human": "Plugin for searching academic papers on arXiv.org. You can search for papers based on a query.",
+  "description_for_model": "Plugin for searching academic papers on arXiv.org. You can search for papers based on a query.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.yml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://bpb-us-e1.wpmucdn.com/blogs.cornell.edu/dist/8/7752/files/2021/02/arxiv-logo.svg",
+  "contact_email": "ShadovvBeast@gmail.com",
+  "legal_info_url": "http://localhost:3000/legal_info.html"
+}
